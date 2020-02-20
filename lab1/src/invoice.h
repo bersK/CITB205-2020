@@ -10,16 +10,15 @@ using std::vector;
 
 class Invoice {
 public:
-    vector<Product> productList;
-    double subtotal;
-    double tax;
-    double sumAll;
+    vector<Item> itemList;
 public:
+    Product productAt(int i);
+    double taxes();
+    double total();
+    double subtotal();
+    double totalAt(int i);
+    int quantityAt(int i);
     void add(Product product, int qty);
-    
-    void calcSubtotal();
-    void calcTax();
-    void calcAll();
 };
 
 

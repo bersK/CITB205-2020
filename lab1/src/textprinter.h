@@ -6,7 +6,7 @@
 
 class TextPrinter {
 public:
-    void print(std::ostream& out, Invoice& in_invoice);
+    void print(std::ostream& out, Invoice& invoice);
 private:
 };
 
