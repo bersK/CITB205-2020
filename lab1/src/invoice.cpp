@@ -1,8 +1,18 @@
 #include "invoice.h"
 
 void Invoice::add(Product product, int qty) {
-    Item newItem(product, qty);
-    itemList.push_back(newItem);
+    bool found = false;
+    for(auto el: itemList) {
+        if(el.product.getName() == product.getName()) {
+            found = true;
+            el.qt += qty;
+            break;
+        }
+    }
+    
+    if(!found) {
+        itemList.push_back(Item(product, qty));
+    }
 }
 
 int Invoice::quantityAt(int i) {
