@@ -9,7 +9,17 @@
 using std::vector;
 
 class Invoice {
-
+public:
+    vector<Product> productList;
+    double subtotal;
+    double tax;
+    double sumAll;
+public:
+    void add(Product product, int qty);
+    
+    void calcSubtotal();
+    void calcTax();
+    void calcAll();
 };
 
 
