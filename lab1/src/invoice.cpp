@@ -3,9 +3,9 @@
 void Invoice::add(Product product, int qty) {
     bool found = false;
     for(auto el: itemList) {
-        if(el.product.getName() == product.getName()) {
+        if(el.getProduct().getName() == product.getName()) {
             found = true;
-            el.qt += qty;
+            el.add(qty);
             break;
         }
     }
@@ -16,15 +16,15 @@ void Invoice::add(Product product, int qty) {
 }
 
 int Invoice::quantityAt(int i) {
-    return itemList[i].qt;
+    return itemList[i].getQty();
 }
 
 double Invoice::totalAt(int i) {
-    return itemList[i].price;
+    return itemList[i].getPrice();
 }
 
-Product Invoice::productAt(int i) {
-    return itemList[i].product;
+Product& Invoice::productAt(int i) {
+    return itemList[i].getProduct();
 }
 
 double Invoice::taxes() {
@@ -34,7 +34,7 @@ double Invoice::taxes() {
 double Invoice::subtotal() {
     double sum = 0;
     for(auto el: itemList) {
-        sum += el.price;
+        sum += el.getPrice();
     }
     return sum;
 }

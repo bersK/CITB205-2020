@@ -12,7 +12,7 @@ class Invoice {
 public:
     vector<Item> itemList;
 public:
-    Product productAt(int i);
+    Product &productAt(int i);
     double taxes();
     double total();
     double subtotal();
