@@ -1,7 +1,13 @@
 {
-    "C_Cpp.default.configurationProvider": "vector-of-bool.cmake-tools",
-    "files.associations": {
-        "*.cfg": "CSGO cfg",
-        "xstring": "cpp"
-    }
+  "C_Cpp.default.configurationProvider": "vector-of-bool.cmake-tools",
+  "files.associations": {
+    "*.cfg": "CSGO cfg",
+    "xstring": "cpp"
+  },
+  "files.exclude": {
+    ".vscode": true,
+    "CMakeFiles": true,
+    ".gitignore": true,
+    "Makefile": true
+  }
 }
